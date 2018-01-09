@@ -1,6 +1,7 @@
 package br.com.templomilenar.controller;
 
-import br.com.templomilenar.configuration.ViewModuleConfiguration;
+import br.com.templomilenar.view.configuration.ViewModuleConfiguration;
+import br.com.templomilenar.view.controller.HomeController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,6 @@ public class HomeControllerTest {
                 get("/"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString(
-                        "funciona multi module templo milenar!")));
+                        "funciona multi module templo milenar ABC!")));
     }
 }
