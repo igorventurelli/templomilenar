@@ -69,4 +69,5 @@ public class CardPriceServiceTest {
                 15, 25, 44);
         assertEquals(expected, service.getUpdateDate("DOCS-EN001"));
     }
+
 }
