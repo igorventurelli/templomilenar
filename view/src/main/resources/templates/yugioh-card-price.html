@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Templo Milenar - Consulta de Preços</title>
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="container">
+        <div class="jumbotron" align="center" style="margin-top: 50px; background:rgb(243, 243, 243);">
+            <span>
+                <img src="../img/logo.jpg" class="img-responsive center-block" alt="Logo" width="150px" />
+            </span>
+            <div style="margin-top: -20px;">
+                <h2>Consulta de Preços</h2>
+                <form action="/yugioh-card-price/query" class="form-inline" method="post">
+                    <div class="form-group">
+                        <label for="printTag">Print Tag:</label>
+                        <input type="text" class="form-control" id="printTag"
+                               required="true" name="printTag" placeholder="Ex: DOCS-EN001" />
+                    </div>
+                    <button type="submit" class="btn btn-default">Consultar</button>
+                    <span th:if="${finalPrintTag != null}">
+                        <p class="bg-info" style="margin-top: 20px;">
+                            <span th:text="${cardName}"></span>
+                            <span th:text="${finalPrintTag}"></span>
+                            <strong><span th:text="${price}"></span></strong>
+                        </p>
+                    </span>
+                    <span th:if="${originalPrintTag != null}">
+                        <p class="bg-danger" style="margin-top: 20px;">
+                            <span th:text="${cardNotFound}"></span>
+                            <span th:text="${originalPrintTag}"></span>
+                        </p>
+                    </span>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

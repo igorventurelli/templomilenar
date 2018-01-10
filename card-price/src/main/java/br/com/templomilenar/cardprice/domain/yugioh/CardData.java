@@ -1,4 +1,4 @@
-package br.com.templomilenar.card_price.domain;
+package br.com.templomilenar.cardprice.domain.yugioh;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -6,21 +6,30 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * VO class for Yugioh Card Price
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class SetData {
+public class CardData {
 
     @JsonProperty("name")
     private String name;
 
-    @JsonProperty("print_tag")
-    private String printTag;
+    @JsonProperty("card_type")
+    private String kind;
 
-    @JsonProperty("rarity")
-    private String rarity;
+    @JsonProperty("property")
+    private String property;
+
+    @JsonProperty("family")
+    private String family;
+
+    @JsonProperty("type")
+    private String type;
 
     @JsonProperty("price_data")
-    private PriceData priceData;
+    private SetData setData;
 }

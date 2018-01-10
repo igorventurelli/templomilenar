@@ -1,4 +1,4 @@
-package br.com.templomilenar.card_price.domain;
+package br.com.templomilenar.cardprice.domain.yugioh;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

@@ -3,18 +3,10 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    <artifactId>service</artifactId>
+    <artifactId>vo</artifactId>
     <groupId>br.com.templomilenar</groupId>
     <version>1.0.0</version>
-
     <modelVersion>4.0.0</modelVersion>
-
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.9.RELEASE</version>
-        <relativePath />
-    </parent>
 
     <build>
         <plugins>
@@ -31,30 +23,10 @@
 
     <dependencies>
         <dependency>
-            <groupId>br.com.templomilenar</groupId>
-            <artifactId>card-price</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>br.com.templomilenar</groupId>
-            <artifactId>vo</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.16.16</version>
             <scope>provided</scope>
-        </dependency>
-        <!-- Test scopes -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 

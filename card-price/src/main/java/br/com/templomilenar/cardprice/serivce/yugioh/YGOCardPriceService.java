@@ -1,6 +1,6 @@
-package br.com.templomilenar.card_price.serivce;
+package br.com.templomilenar.cardprice.serivce.yugioh;
 
-import br.com.templomilenar.card_price.domain.CardPrice;
+import br.com.templomilenar.vo.card.yugioh.YugiohCardPriceVO;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
  * @since 1.0.0
  */
 @Service
-public interface CardPriceService {
+public interface YGOCardPriceService {
 
     /**
      * Yugioh Prices API endpoint
@@ -20,14 +20,14 @@ public interface CardPriceService {
     static final String YGO_PRICES_API = "http://yugiohprices.com/api/price_for_print_tag/";
 
     /**
-     * Returns the {@link CardPrice} of the card
+     * Returns the {@link YugiohCardPriceVO} of the card
      *
      * @param printTag of the card
      * @return If the card is found returns the
-     * Highest, Lowest and Average prices as {@link CardPrice}.
+     * {@link YugiohCardPriceVO} instance.
      * If not, returns <code>null</code>
      */
-    CardPrice getCardPrice(final String printTag);
+    YugiohCardPriceVO getCardPrice(final String printTag);
 
     /**
      * Returns the highest price of the card
@@ -36,7 +36,7 @@ public interface CardPriceService {
      * @return If the card if found returns the highest price.
      * If not, returns <code>-1d</code>
      */
-    double getMaxPrice(final String printTag);
+    double getHighestPrice(final String printTag);
 
     /**
      * Returns the lowest price of the card
@@ -45,7 +45,7 @@ public interface CardPriceService {
      * @return If the card if found returns the lowest price.
      * If not, returns <code>-1d</code>
      */
-    double getLowPrice(final String printTag);
+    double getLowestPrice(final String printTag);
 
     /**
      * Returns the average price of the card
@@ -64,4 +64,5 @@ public interface CardPriceService {
      * If not, returns <code>null</code>
      */
     LocalDateTime getUpdateDate(final String printTag);
+
 }

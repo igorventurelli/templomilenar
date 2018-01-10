@@ -1,4 +1,4 @@
-package br.com.templomilenar.card_price.domain;
+package br.com.templomilenar.cardprice.domain.yugioh;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -24,16 +24,16 @@ public class CardPrice {
     private String printTag;
 
     @JsonProperty("high")
-    private double max;
+    private double highestPrice;
 
     @JsonProperty("low")
-    private double low;
+    private double lowestPrice;
 
     @JsonProperty("average")
-    private double average;
+    private double averagePrice;
 
     @JsonProperty("updated_at")
-    private String lastUpdate;
+    private String updateDate;
 
     /**
      * Return the <code>lastUpdate</code> String field as {@link LocalDateTime}
@@ -41,6 +41,6 @@ public class CardPrice {
      * @return The last update date of the price for this card
      */
     public LocalDateTime getLastUpdateAsLocalDateTime() {
-        return LocalDateTime.parse(lastUpdate, DateTimeFormatter.ofPattern("yyy-MM-dd HH:mm:ss Z"));
+        return LocalDateTime.parse(updateDate, DateTimeFormatter.ofPattern("yyy-MM-dd HH:mm:ss Z"));
     }
 }

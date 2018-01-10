@@ -30,6 +30,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>br.com.templomilenar</groupId>
+            <artifactId>vo</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
@@ -48,6 +53,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>br.com.templomilenar</groupId>
+            <artifactId>vo</artifactId>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
 </project>

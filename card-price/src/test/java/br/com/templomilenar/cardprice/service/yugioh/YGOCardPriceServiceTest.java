@@ -1,8 +1,8 @@
-package br.com.templomilenar.card_price.service;
+package br.com.templomilenar.cardprice.service.yugioh;
 
-import br.com.templomilenar.card_price.configuration.CardPriceModuleConfiguration;
-import br.com.templomilenar.card_price.domain.CardPrice;
-import br.com.templomilenar.card_price.serivce.CardPriceService;
+import br.com.templomilenar.cardprice.configuration.CardPriceModuleConfiguration;
+import br.com.templomilenar.cardprice.serivce.yugioh.YGOCardPriceService;
+import br.com.templomilenar.vo.card.yugioh.YugiohCardPriceVO;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,21 +21,21 @@ import static org.mockito.Mockito.when;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @ContextConfiguration(classes = {CardPriceModuleConfiguration.class})
-public class CardPriceServiceTest {
+public class YGOCardPriceServiceTest {
 
     @MockBean
-    private CardPriceService service;
+    private YGOCardPriceService service;
 
     @Mock
-    CardPrice mock;
+    YugiohCardPriceVO mock;
 
     @Before
     public void setup() {
         when(service.getCardPrice(anyString())).thenReturn(mock);
-        when(mock.getAverage()).thenReturn(10d);
+        when(mock.getAveragePrice()).thenReturn(10d);
 
-        when(service.getMaxPrice(anyString())).thenReturn(20d);
-        when(service.getLowPrice(anyString())).thenReturn(5d);
+        when(service.getHighestPrice(anyString())).thenReturn(20d);
+        when(service.getLowestPrice(anyString())).thenReturn(5d);
         when(service.getAveragePrice(anyString())).thenReturn(15d);
         when(service.getUpdateDate(anyString()))
                 .thenReturn(LocalDateTime.of(2017, 1, 8,
@@ -44,18 +44,18 @@ public class CardPriceServiceTest {
 
     @Test
     public void shouldReturnCardPrice() {
-        CardPrice price = service.getCardPrice("DOCS-EN001");
-        assertEquals(10d, price.getAverage(), 0.0001);
+        YugiohCardPriceVO price = service.getCardPrice("DOCS-EN001");
+        assertEquals(10d, price.getAveragePrice(), 0.0001);
     }
 
     @Test
     public void shouldReturnHighestPrice() {
-        assertEquals(20d, service.getMaxPrice("DOCS-EN001"), 0.0001);
+        assertEquals(20d, service.getHighestPrice("docs-en001"), 0.0001);
     }
 
     @Test
     public void shouldReturnLowestPrice() {
-        assertEquals(5d, service.getLowPrice("DOCS-EN001"), 0.0001);
+        assertEquals(5d, service.getLowestPrice("DOCS-EN001"), 0.0001);
     }
 
     @Test
