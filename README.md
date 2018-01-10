@@ -1,8 +1,8 @@
 # Templo Milenar ERP
 
-ERP do Templo Milenar.  
+ERP do Templo Milenar  
 
-[![Build Status](https://travis-ci.org/igorventurelli/templomilenar.svg?branch=master)](https://travis-ci.org/igorventurelli/templomilenar) [![Quality Gate](https://sonarcloud.io/api/badges/gate?key=br.com.templomilenar:templomilenar)](https://sonarcloud.io/dashboard/index/br.com.templomilenar:templomilenar)
+[![Build Status](https://travis-ci.org/igorventurelli/templomilenar.svg?branch=master)](https://travis-ci.org/igorventurelli/templomilenar)  [![Quality Gate](https://sonarcloud.io/api/badges/gate?key=br.com.templomilenar:templomilenar)](https://sonarcloud.io/dashboard/index/br.com.templomilenar:templomilenar)
 
 ## Módulos
 
