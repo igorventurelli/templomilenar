@@ -17,7 +17,6 @@ Nesse módulo está a classe anotada com  a anotação `@SpringBootApplication`.
 
 - `card-price`: módulo responsável por fornecer os preços das cartas baseado na API de [Yugioh Prices](yugiohprices.com).
 
-----------
 
 ## Frameworks
 São utilizados alguns frameworks na aplicação:
