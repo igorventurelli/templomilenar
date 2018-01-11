@@ -7,22 +7,24 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
+@RequestMapping("/cards/yugioh/price")
 public class YugiohCardPriceController {
 
     @Autowired
     @Qualifier("yugiohCardPriceServiceImpl")
     private YugiohCardPriceService service;
 
-    @RequestMapping("/yugioh-card-price")
+    @RequestMapping(method = RequestMethod.GET)
     public String index() {
         return "yugioh-card-price";
     }
 
-    @RequestMapping("/yugioh-card-price/query")
+    @RequestMapping(value = "/query", method = RequestMethod.GET)
     public ModelAndView getPrice(@RequestParam("printTag") String printTag) {
         ModelAndView mv = new ModelAndView("yugioh-card-price");
 
@@ -37,6 +39,5 @@ public class YugiohCardPriceController {
         }
 
         return mv;
-        //return "forward:/yugioh-card-price";
     }
 }
